@@ -36,7 +36,6 @@ Soy Ana Janeth Cortés, estudiante de Maestría en Gestión de Proyectos, con ex
 Puedes clonar este repositorio y explorar el código fuente de mis proyectos para aprender o inspirarte. Si quieres contactarme, puedes encontrarme en:
 
 - [LinkedIn](https://www.linkedin.com/in/ana-janeth-cortes)
-- [TikTok Legado de Roma](https://www.tiktok.com/@legadoderoma)
 
 ---
 
