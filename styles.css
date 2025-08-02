@@ -145,11 +145,15 @@ section {
 }
 
 .btn-primary:focus {
-  outline: 2px solid #fa97cf; /* contorno rosa visible */
-  outline-offset: 4px;
-  box-shadow: 0 0 10px #fa97cf; /* resplandor suave */
+  outline: none; /* quitar outline por defecto */
+  box-shadow: none;
 }
 
+.btn-primary:focus-visible {
+  outline: 2px solid #fa97cf;
+  outline-offset: 4px;
+  box-shadow: 0 0 10px #fa97cf;
+}
 
 /* Imagen cohete y destello*/
 .hero-img {
