@@ -127,7 +127,7 @@ section {
   margin-bottom: 2rem;
   color: rgba(255,255,255,0.8);
 }
-
+/* Botón principal */
 .btn-primary {
   display: inline-block;
   padding: 0.8rem 1.6rem;
@@ -141,6 +141,7 @@ section {
 
 .btn-primary:hover {
   box-shadow: 0 4px 10px rgba(152, 0, 219, 0.5);
+  transform: translateY(-2px); /* efecto de elevación */
 }
 
 .btn-primary:focus {
@@ -149,10 +150,6 @@ section {
   box-shadow: 0 0 10px #fa97cf; /* resplandor suave */
 }
 
-.btn-primary:active {
-  transform: scale(0.97); /* efecto de "clic" */
-  box-shadow: 0 2px 6px rgba(152, 0, 219, 0.4);
-}
 
 /* Imagen cohete y destello*/
 .hero-img {
