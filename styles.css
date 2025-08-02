@@ -301,15 +301,20 @@ footer {
   }
 
   /* Ocultar el menú por defecto */
-  nav {
-    position: absolute;
-    top: 70px;
-    right: 0;
-    background: rgba(0,0,0,0.8);
-    width: 200px;
-    display: none;
-    border-radius: 8px;
-  }
+nav {
+  background: rgba(27, 11, 46, 0.95); /* fondo oscuro casi opaco */
+  border: 1px solid #fa97cf; /* borde rosa suave para destacar */
+  box-shadow: 0 4px 12px rgba(250, 151, 207, 0.5); /* sombra que levanta el menú */
+  padding: 1rem;
+  border-radius: 10px;
+  width: 220px; /* un poco más ancho para no quedar apretado */
+  right: 1rem; /* separar un poco del borde de la pantalla */
+  top: 70px;
+  display: none;
+  position: absolute;
+  z-index: 1000; /* asegurarse que quede encima de todo */
+}
+
 
   nav ul {
     flex-direction: column;
