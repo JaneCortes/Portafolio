@@ -143,24 +143,63 @@ section {
   box-shadow: 0 4px 10px rgba(152, 0, 219, 0.5);
 }
 
-/* Imagen cohete */
+/* Imagen cohete y destello*/
 .hero-img {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative; /* necesario para posicionar el destello */
 }
 
-.hero-img img {
-  max-width: 100%; 
+/* Estilos solo para el cohete */
+.cohete {
+  max-width: 100%;
   height: auto;
-  animation: float 3s ease-in-out infinite;
+  animation: flotar 3s ease-in-out infinite;
+  z-index: 2; 
+  }
+
+/* Estilos solo para el destello */
+.destello {
+  position: absolute;
+  top: -50%;   /* ajusta según la posición que quieras */
+  left: -70%;  /* ajusta horizontal */
+  width: 800px;
+  height: auto;
+  animation: brillar 1.5s infinite ease-in-out;
+  z-index: 1; /* destello detrás */
 }
 
-/* Animación flotante */
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-15px); }
+/* Animación de flotación del cohete */
+@keyframes flotar {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Animación de brillo del destello */
+@keyframes brillar {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 0.6;
+  }
+}
+
+/* Cambiar posición del destello en pantallas pequeñas */
+@media (max-width: 768px) {
+  .destello {
+    top: -20%;   /* más cercano al cohete */
+    left: -30%;  /* más centrado */
+    width: 600px; /* tamaño más pequeño */
+  }
 }
 
 /* Animacion para las estrellas*/
