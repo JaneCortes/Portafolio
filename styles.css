@@ -343,7 +343,6 @@ nav {
   z-index: 1000; /* asegurarse que quede encima de todo */
 }
 
-
   nav ul {
     flex-direction: column;
     gap: 1rem;
@@ -355,3 +354,96 @@ nav {
   }
 }
 
+.certificaciones {
+  padding: 0rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.certificaciones-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  max-width: 1200px; /* mismo ancho que hero */
+  width: 100%;
+  margin: 0 auto; /* centra el contenedor */
+  padding: 0 4rem; /* mismo padding lateral que hero */
+}
+
+/* Astronauta - 3/8 */
+.astronauta-img {
+  flex: 3;
+  display: flex;
+  justify-content: center;
+  /*transform: translateY(-30px);*/
+}
+
+.astronauta-img img {
+  max-width: 100%;
+  height: auto;
+  animation: flotar 4s ease-in-out infinite;
+}
+
+/* Contenido derecho - 5/8 */
+.certificaciones-right {
+  flex: 5;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.certificaciones-content {
+  text-align: left; /* texto cargado a la izquierda */
+}
+
+.certificaciones-content h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.certificaciones-content p {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.5;
+  text-align: left; /* por si acaso */
+}
+
+/* Cuadros */
+.certificaciones-cuadros {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 2 por fila */
+  gap: 25px 25px; /* 10px vertical, 20px horizontal */
+}
+
+.cuadro {
+  background: rgba(255, 255, 255, 0.1); /* semitransparente */
+  border-radius: 10px;
+  aspect-ratio: 1 / 1; /* mantiene forma cuadrada */
+}
+
+/* Animación flotante del astronauta */
+@keyframes flotar {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .certificaciones-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .certificaciones-cuadros {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .astronauta-img {
+    margin-bottom: 2rem;
+  }
+}
