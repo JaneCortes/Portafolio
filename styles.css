@@ -143,6 +143,17 @@ section {
   box-shadow: 0 4px 10px rgba(152, 0, 219, 0.5);
 }
 
+.btn-primary:focus {
+  outline: 2px solid #fa97cf; /* contorno rosa visible */
+  outline-offset: 4px;
+  box-shadow: 0 0 10px #fa97cf; /* resplandor suave */
+}
+
+.btn-primary:active {
+  transform: scale(0.97); /* efecto de "clic" */
+  box-shadow: 0 2px 6px rgba(152, 0, 219, 0.4);
+}
+
 /* Imagen cohete y destello*/
 .hero-img {
   flex: 1;
@@ -268,22 +279,38 @@ section {
   }
 }
 
-/* Separdor */
+/* SEPARADOR */
 .separador {
+  position: relative;
   width: 100%;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
+  height: auto;
   margin-top: -60px;
+  overflow: hidden; /* para que el pseudo-elemento no se desborde */
+}
+
+.separador::before {
+  content: "";
+  position: absolute;
+  top: 70px; /* bajarla un poco */
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('img/oscuridad.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: .2; 
+  z-index: 0;
 }
 
 .separador img {
   width: 100%;
   height: auto;
   display: block;
-  max-width: 100vw; 
+  position: relative;
+  z-index: 1;
 }
+
 
 /* FOOTER */
 footer {
