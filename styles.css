@@ -1,0 +1,135 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  background: radial-gradient(circle at top left, rgba(250,151,207,0.2), transparent 40%),
+              radial-gradient(circle at bottom right, rgba(43,165,178,0.15), transparent 40%),
+              radial-gradient(circle at center, rgba(59,78,115,0.15), transparent 40%),
+              #1b0b2e;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: relative;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.logo img {
+  width: 35px;
+  height: 35px;
+}
+
+/* NAV normal */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 20px;
+  transition: background 0.3s;
+}
+
+/* estado activo */
+nav ul li a.active,
+nav ul li a:hover {
+  background: linear-gradient(to right, #9800DB, #fa97cf);
+  box-shadow: 0 4px 10px rgba(152, 0, 219, 0.4); /* sombra violeta */
+}
+
+/* BOTÓN HAMBURGUESA */
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.logo span {
+  font-family: 'Orbitron', sans-serif;
+  background:  #fa97cf;
+  background-clip: text;             /* estándar */
+  -webkit-background-clip: text;     /* soporte en Chrome/Safari */
+  color: transparent;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+}
+
+/* MAIN SECTIONS */
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+section {
+  padding: 3rem 2rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  background: rgba(0,0,0,0.2);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  /* Mostrar el botón hamburguesa */
+  .hamburger {
+    display: block;
+  }
+
+  /* Ocultar el menú por defecto */
+  nav {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: rgba(0,0,0,0.8);
+    width: 200px;
+    display: none;
+    border-radius: 8px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  nav.active {
+    display: block;
+  }
+}
+
