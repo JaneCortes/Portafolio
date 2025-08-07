@@ -1,71 +1,108 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portafolio Janeth</title>
-  <!-- Fuentes -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Orbitron:wght@600&display=swap" rel="stylesheet" />
-  <!-- Estilos -->
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css">
+  <!-- Fuente Montserrat para general -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Fuente Orbitron solo para el nombre -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+
 </head>
 <body>
-
+  <!-- HEADER -->
   <header>
     <div class="logo">
-      <img src="img/logo.png" alt="Logo Janeth" />
+      <img src="img/logo.png" alt="Logo Janeth">
       <span>Janeth</span>
     </div>
-    <div class="hamburger" id="hamburger">☰</div>
+
+    <!-- Botón hamburguesa -->
+    <div class="hamburger" id="hamburger">
+      ☰
+    </div>
+
     <nav id="nav-menu">
       <ul>
-        <li><a href="#home" class="active">Home</a></li>
-        <li><a href="#aboutme">Sobre mí</a></li>
-        <li><a href="#proyectos">Proyectos</a></li>
-        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Sobre mí</a></li>
+        <li><a href="#">aboutme</a></li>
+        <li><a href="#">Proyectos</a></li>
+        <li><a href="#">Contacto</a></li>
       </ul>
     </nav>
   </header>
 
+  <!-- MAIN -->
   <main>
 
-    <!-- HERO -->
-    <section id="home" class="hero">
+  <!-- Estrellas de fondo -->
+  <img src="img/estrella.png" alt="Estrella" class="star" style="--i:0;">
+  <img src="img/estrella.png" alt="Estrella" class="star" style="--i:1;">
+  <img src="img/estrella.png" alt="Estrella" style="--i:2;" class="star">
+  <img src="img/estrella.png" alt="Estrella" style="--i:3;" class="star">
+  <img src="img/estrella.png" alt="Estrella" style="--i:4;" class="star">
+
+  <!-- HERO -->
+    <section class="hero">
       <div class="hero-content">
         <h1>Hola, soy <span>Janeth</span></h1>
         <p>Desarrolladora Frontend & Data Analyst</p>
-        <p>Bienvenida a mi espacio creativo. Aquí encontrarás mis proyectos, experiencia en desarrollo web, análisis de datos y más.</p>
+        <p>Bienvenida a mi espacio creativo. Aquí encontrarás mis proyectos,
+          aboutme y experiencia en desarrollo web, análisis de datos y más. Mi meta es aportar valor 
+          a través de tecnología, creatividad y estrategia</P>
         <a href="#proyectos" class="btn-primary">Ver mis proyectos</a>
       </div>
+      
       <div class="hero-img">
-        <img src="img/cohete.png" alt="Cohete" class="cohete" />
-        <img src="img/destello.png" alt="Destello" class="destello" />
+        <img src="img/cohete.png" alt="Cohete" class="cohete"/>
+        <img src="img/destello.png" alt="Destello" class="destello"/>
       </div>
     </section>
 
-    <!-- ABOUT ME -->
-    <section id="aboutme" class="aboutme">
-      <div class="aboutme-container">
+    <section class="separador">
+      <img src="img/morado.png" alt="morado"/>
+    </section>
+    
+    <!--aboutme-->
+      <section class="aboutme" id="aboutme">
+        <div class="aboutme-container">
+        <!-- Astronauta flotando (3/8) -->
         <div class="astronauta-img">
-          <img src="img/astronauta.png" alt="Astronauta" />
+          <img src="img/astronauta.png" alt="Astronauta"/>
         </div>
+
+<!-- Contenido derecho (5/8) -->
         <div class="aboutme-right">
           <div class="aboutme-content">
-            <p class="texto-grande">Apasionada por el desarrollo front-end, el análisis de datos y la mejora de procesos.</p>
-            <p class="texto-mediano">Mi enfoque está en crear soluciones intuitivas, funcionales y visualmente atractivas.</p>
-            <p class="texto-pequeno">Además, combino mi formación técnica con experiencia en control de calidad y gestión documental.</p>
+            <p class="texto-grande">Apasionada por el desarrollo front-end, el análisis de datos y la mejora de procesos. </p>
+            <p class="texto-mediano ">Mi enfoque está en crear soluciones intuitivas, funcionales y visualmente atractivas, buscando siempre optimizar la experiencia del usuario y la eficiencia de los sistemas.</p>
+            <p class="texto-pequeno ">Además, combino mi formación técnica con experiencia en control de calidad y gestión documental.</p>
           </div>
-          <div class="aboutme-cuadros">
-            <div class="cuadro"><img src="img/iconos/icono1.png" alt="icono1" /></div>
-            <div class="cuadro"><img src="img/iconos/icono2.png" alt="icono2" /></div>
-            <div class="cuadro"><img src="img/iconos/icono3.png" alt="icono3" /></div>
-            <div class="cuadro"><img src="img/iconos/icono4.png" alt="icono4" /></div>
-          </div>
+
+          <!-- Cuadros -->
+         <div class="aboutme-cuadros">
+            <div class="cuadro hidden">
+              <img src="img/iconos/icono1.png" alt="icono1">
+            </div>
+            <div class="cuadro hidden">
+              <img src="img/iconos/icono2.png" alt="icono2">
+            </div>
+            <div class="cuadro hidden">
+              <img src="img/iconos/icono3.png" alt="icono3">
+            </div>
+            <div class="cuadro hidden">
+              <img src="img/iconos/icono4.png" alt="icono4">
+            </div>
+        </div>
+
         </div>
       </div>
     </section>
 
-        <!-- Separador -->
+    <!-- Separador -->
     <div class="tech-badges">
       <div class="badges-move">
         <span><img src="img/herramientas/figma.png" alt="Figma"> Figma</span>
@@ -86,15 +123,13 @@
       </div>
     </div>
 
-
-    <!-- PROYECTOS -->
-    <section id="proyectos" class="proyectos">
+    <!-- Proyectos -->
+    <section class="proyectos" id="proyectos">
       <h2>Proyectos</h2>
-      <!-- Aquí puedes agregar tus proyectos -->
     </section>
+ </main>
 
-  </main>
-
+  <!-- FOOTER -->
   <footer>
     <p>© 2025 Janeth - Todos los derechos reservados</p>
   </footer>
