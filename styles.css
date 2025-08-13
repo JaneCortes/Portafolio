@@ -27,7 +27,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 1rem 4rem;
   position: relative;
 }
 
@@ -113,7 +113,7 @@ section {
 
 .hero-content h1 {
   font-size: 2.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .hero-content h1 span {
@@ -125,7 +125,7 @@ section {
 
 .hero-content p {
   font-size: 1.2rem;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1rem;
   color: rgba(255,255,255,0.8);
 }
 
@@ -246,18 +246,17 @@ section {
 .separador {
   position: relative;
   width: 100%;
-  margin-top: -60px;
+  margin-top: -35px;
   overflow: hidden;
 }
 
 .separador::before {
   content: "";
   position: absolute;
-  top: 70px;
+  top: 10px;
   left: 0;
   width: 100%;
-  height: 100%;
-  background-image: url('img/oscuridad.png');
+  height: 100%;;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -274,7 +273,7 @@ section {
 
 /* ABOUT ME */
 .aboutme {
-  padding: 0 2rem;
+  padding: -40rem 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -511,3 +510,142 @@ footer {
     width: 150px;
   }
 }
+
+/* CERTIFICACIONES */
+.certificaciones {
+  background-color: #f1d9f9;
+  padding: 40px 20px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.certificaciones h2 {
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+}
+
+.certificaciones p {
+  max-width: 600px;
+  margin: 0 auto 32px;
+}
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.cert-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  background: white;
+  border-radius: 12px;
+  min-height: 150px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.cert-card:hover {
+  box-shadow: 0 8px 20px rgba(250, 151, 207, 0.7);
+  transform: translateY(-5px);
+}
+
+.cert-img {
+  margin: 2px 0 2px 12px;
+  height: calc(100% - 4px); /* restar márgenes */
+  width: auto;
+  max-width: 120px;
+  object-fit: contain;
+}
+
+.cert-info {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cert-info h3 {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.cert-uni {
+  font-size: 0.85rem;
+  color: #6b3ba8;
+}
+
+.cert-date {
+  font-size: 0.75rem;
+  color: #9e85b3;
+}
+
+.cert-link {
+  background-color: #2e004f;
+  color: white;
+  text-decoration: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cert-link:hover {
+  background-color: #fa97cf;
+  box-shadow: 0 4px 15px rgba(250, 151, 207, 0.6);
+  transform: scale(1.15); /* crece un poquito */
+}
+
+.show-more {
+    display: inline-block;
+  margin-top: 50px; /* más espacio visual desde las tarjetas */
+  padding: 12px 28px;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #fff;
+  background: linear-gradient(90deg, #9800DB, #fa97cf);
+  border-radius: 30px;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(152, 0, 219, 0.4);
+  transition: all 0.3s ease;
+}
+
+.show-more:hover {
+  background-color: #fa97cf;
+  box-shadow: 0 6px 16px rgba(250, 151, 207, 0.6);
+  transform: translateY(-2px);
+}
+
+.show-more:active {
+  transform: translateY(0);
+}
+
+/* Para pantallas pequeñas */
+@media (max-width: 768px) {
+  .cert-grid {
+    grid-template-columns: 1fr; /* solo una tarjeta por fila */
+  }
+
+  .cert-card {
+    grid-template-columns: auto 1fr; /* imagen + texto en horizontal */
+  }
+
+  .cert-img {
+    max-width: 100px; /* un poco más compacta para móviles */
+  }
+}
+
+
+
