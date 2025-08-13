@@ -20,11 +20,11 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ----- CERTIFICACIONES -----
-  const certGrid = document.querySelector(".cert-grid"); // ahora por clase
-  const certCards = certGrid.querySelectorAll(".cert-card");
-  const showMoreBtn = document.getElementById("showMoreBtn");
+  const certGrid = document.querySelector(".cert-grid");
+  const certCards = certGrid.querySelectorAll(".cert-cart"); // corregido
+  const showMoreBtn = document.getElementById("showMoreBtn"); // mismo ID en HTML
 
-  const maxVisible = 4; 
+  const maxVisible = 4;
   let expanded = false;
 
   // Ocultar los que exceden el límite
@@ -52,6 +52,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    showMoreBtn.textContent = expanded ? "Show less" : "Show more";
+    showMoreBtn.textContent = expanded ? "Mostrar menos" : "Mostrar más";
   });
 });
