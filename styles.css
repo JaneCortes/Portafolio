@@ -271,92 +271,155 @@ section {
   z-index: 1;
 }
 
-/* ABOUT ME */
+/*aboutme*/
 .aboutme {
-  padding: 1rem 6rem;
   display: flex;
   flex-wrap: wrap;
+  gap: 20px;
   justify-content: center;
-  align-items: center;
-  gap: 5rem;
-
+  align-items: stretch; /* Stretch para igualar altura de hijos */
+  padding: 40px 20px;
   color: #fff;
 }
 
-/* Imagen astronauta */
-.aboutme-img {
-  flex: 1 1 35%;
+.aboutme-container {
   display: flex;
+  gap: 20px;
   justify-content: center;
+  align-items: stretch; /* Stretch obliga a que hijos tengan la misma altura */
+}
+
+.aboutme-img {
+  flex: 1 1 450px;
+  max-width: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  height: auto; /* se ajusta al contenido de aboutme-content */
 }
 
 .aboutme-img img {
-  max-width: 500px;
   width: 100%;
-  animation: flotar 4s ease-in-out infinite;
+  height: 100%; /* Ocupa toda la altura del contenedor */
+  object-fit: cover; /* Mantiene proporción */
 }
 
-/* Contenido texto + cuadros */
 .aboutme-content {
-  flex: 1 1 40%;
+  flex: 1 1 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Texto */
+.aboutme-text {
+  font-family: 'Montserrat', sans-serif;
+  color: #e0e0e0;
+  padding: 20px;
+  border-radius: 8px;
+  height: 100%; /* Ocupa toda la altura del contenedor flex */
+}
+
+.aboutme-text h2 {
+  font-size: clamp(1.5rem, 4vw, 3.5rem); /* mínimo 1.5rem, máximo 2.5rem */
+  margin-bottom: 10px;
 }
 
 .aboutme-text p {
-  font-family: 'Montserrat', sans-serif;
-  color: #e0e0e0;
-  font-size:1.4rem;
-  line-height: 1.7;
-  margin-bottom: 1.2rem;
-}
-
-.aboutme-text p:first-child {
-  font-size: 2.5rem;
-  font-weight: 600;
-  color: #ffffff;
+  font-size: clamp(1rem, 2.5vw, 2rem); /* mínimo 1rem, máximo 1.25rem */
+  line-height: 1.5;
 }
 
 /* Cuadros */
 .aboutme-cuadros {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* siempre 4 columnas */
-  gap: clamp(0.3rem, 2vw, 1rem); /* gap adaptable */
-  margin-top: 2rem;
-  width: 100%;
- 
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
 }
 
-.aboutme-cuadros > div {
+.cuadro {
+
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hover en los cuadros */
+.cuadro-interno {
   background: rgba(255, 255, 255, 0.1);
   border: 2px solid rgba(250, 151, 207, 0.5);
   border-radius: 12px;
   box-shadow:
     0 4px 8px rgba(250, 151, 207, 0.2),
     inset 0 0 8px rgba(255, 255, 255, 0.1);
-  aspect-ratio: 1 / 1; /* cuadrados perfectos */
+
+  width: 80%;
+  aspect-ratio: 1 / 1;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   cursor: pointer;
-  min-width: 0; /* evita desbordes en pantallas pequeñas */
 }
 
-.aboutme-cuadros img {
+.cuadro-interno img {
   width: 50%;
   height: auto;
-  transition: transform 0.3s ease;
+  transition: transform 0.25s ease;
 }
 
-.aboutme-cuadros > div:hover {
+/* Hover aplicado correctamente */
+.cuadro-interno:hover {
   transform: translateY(-5px) scale(1.1);
   box-shadow:
     0 8px 16px rgba(250, 151, 207, 0.5),
     inset 0 0 12px rgba(255, 255, 255, 0.2);
 }
 
-.aboutme-cuadros > div:hover img {
+.cuadro-interno:hover img {
   transform: scale(1.15);
 }
+
+
+/* Responsivo tablets */
+@media (max-width: 768px) {
+  .aboutme-cuadros {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Responsivo móviles */
+@media (max-width: 480px) {
+  .aboutme {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .aboutme-img, .aboutme-content {
+    flex: 1 1 100%;
+    max-width: 300px;
+  }
+
+  .aboutme-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* centra verticalmente */
+    align-items: center;     /* centra horizontalmente */
+    text-align: center;      /* centra el texto dentro de los elementos */
+    min-height: auto;
+  }
+
+  .aboutme-cuadros {
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+  }
+}
+
 
 /* Animación flotando */
 @keyframes flotar {
@@ -364,32 +427,6 @@ section {
   50% { transform: translateY(0); }
 }
 
-@media (max-width: 480px) {
-  
-  .aboutme {
-    padding: 1rem 5rem;
-    gap: 1rem;
-  }
-
-  .aboutme-img, .aboutme-content {
-    text-align: center;
-  }
-
-  .aboutme-cuadros {
-    gap: 1rem;
-  }
-
-  .aboutme-text p {
-  font-size:1rem;
-  }
-
-  .aboutme-text p:first-child {
-    font-size: 1.5rem;
-  }
-.aboutme-img img {
-  max-width: 200px;
-}
-}
 
 /* TECH BADGES */
 .tech-badges {
