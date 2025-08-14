@@ -112,7 +112,7 @@ section {
 }
 
 .hero-content h1 {
-  font-size: 2.5rem;
+  font-size: 6rem;
   margin-bottom: 1rem;
 }
 
@@ -273,120 +273,123 @@ section {
 
 /* ABOUT ME */
 .aboutme {
-  padding: -40rem 2rem;
+  padding: 1rem 6rem;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-}
+  gap: 5rem;
 
-.aboutme-container {
-  display: flex;
-  align-items: flex-start;
-  gap: 2rem;
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 4rem;
-}
-
-.astronauta-img {
-  flex: 3;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-}
-
-.astronauta-img img {
-  max-width: 100%;
-  width: 280px;
-  animation: flotar 4s ease-in-out infinite;
-  transform: translateY(-20px);
-}
-
-/*aboutme */
-.aboutme {
-  padding: 4rem 2rem;
   color: #fff;
 }
 
-.aboutme-container {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.astronauta-img {
+/* Imagen astronauta */
+.aboutme-img {
   flex: 1 1 35%;
-  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
-.astronauta-img img {
+.aboutme-img img {
+  max-width: 500px;
   width: 100%;
-  max-width: 300px;
+  animation: flotar 4s ease-in-out infinite;
 }
 
-.aboutme-right {
-  flex: 1 1 60%;
-  text-align: left;
+/* Contenido texto + cuadros */
+.aboutme-content {
+  flex: 1 1 40%;
 }
 
-.aboutme-content p {
+.aboutme-text p {
   font-family: 'Montserrat', sans-serif;
   color: #e0e0e0;
-  font-size: 1.1rem;
+  font-size:1.4rem;
   line-height: 1.7;
   margin-bottom: 1.2rem;
 }
 
-.aboutme-content p:first-child {
-  font-size: 1.4rem;
+.aboutme-text p:first-child {
+  font-size: 2.5rem;
   font-weight: 600;
   color: #ffffff;
 }
 
+/* Cuadros */
 .aboutme-cuadros {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(4, 1fr); /* siempre 4 columnas */
+  gap: clamp(0.3rem, 2vw, 1rem); /* gap adaptable */
   margin-top: 2rem;
-  max-width: 400px; /* o lo que prefieras para controlar ancho */
+  width: 100%;
+ 
 }
 
-.cuadro {
+.aboutme-cuadros > div {
   background: rgba(255, 255, 255, 0.1);
   border: 2px solid rgba(250, 151, 207, 0.5);
-  border-radius: 16px;
+  border-radius: 12px;
   box-shadow:
     0 4px 8px rgba(250, 151, 207, 0.2),
     inset 0 0 8px rgba(255, 255, 255, 0.1);
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 1 / 1; /* cuadrados perfectos */
   display: flex;
   justify-content: center;
   align-items: center;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   cursor: pointer;
+  min-width: 0; /* evita desbordes en pantallas pequeñas */
 }
 
-.cuadro img {
+.aboutme-cuadros img {
   width: 50%;
   height: auto;
   transition: transform 0.3s ease;
 }
 
-.cuadro:hover {
+.aboutme-cuadros > div:hover {
   transform: translateY(-5px) scale(1.1);
   box-shadow:
     0 8px 16px rgba(250, 151, 207, 0.5),
     inset 0 0 12px rgba(255, 255, 255, 0.2);
 }
 
-.cuadro:hover img {
+.aboutme-cuadros > div:hover img {
   transform: scale(1.15);
 }
 
+/* Animación flotando */
+@keyframes flotar {
+  0%, 100% { transform: translateY(-20px); }
+  50% { transform: translateY(0); }
+}
+
+@media (max-width: 480px) {
+  
+  .aboutme {
+    padding: 1rem 5rem;
+    gap: 1rem;
+  }
+
+  .aboutme-img, .aboutme-content {
+    text-align: center;
+  }
+
+  .aboutme-cuadros {
+    gap: 1rem;
+  }
+
+  .aboutme-text p {
+  font-size:1rem;
+  }
+
+  .aboutme-text p:first-child {
+    font-size: 1.5rem;
+  }
+.aboutme-img img {
+  max-width: 200px;
+}
+}
 
 /* TECH BADGES */
 .tech-badges {
@@ -478,24 +481,10 @@ footer {
   .hero-img img {
     width: 300px;
   }
+  
+  .hero-content h1 {
+  font-size: 2.5rem;
 
-  .aboutme-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .aboutme-cuadros {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .astronauta-img {
-    margin-bottom: 2rem;
-  }
-
-  .astronauta-img img {
-    width: 200px;
-    transform: translateY(0);
   }
 
   .destello {
@@ -505,13 +494,8 @@ footer {
   }
 }
 
-@media (max-width: 480px) {
-  .astronauta-img img {
-    width: 150px;
-  }
-}
 
-/* CERTIFICATES */
+
 /* CERTIFICATES */
 .cert-grid {
   display: grid;
